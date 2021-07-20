@@ -1,0 +1,23 @@
+.form-group small
+{
+   visibility: hidden;
+   position: relative;
+}
+
+.form-group.error small
+{
+   visibility: visible;
+   position: relative;
+}
+
+.form-group.error .form-control
+{
+    border-color:red;
+    visibility: visible;
+}
+
+.form-group.sucess .form-control
+{
+    border-color:green;
+    visibility: visible;
+}
