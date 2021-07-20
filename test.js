@@ -2,7 +2,7 @@ const userName=document.getElementById("name");
 const phonNo=document.getElementById("phon");
 const form = document.getElementById("form")
 
-form.addEventListener('mouseleave', (e)=>
+form.addEventListener('mouseout', (e)=>
 {
  e.preventDefault();
  checkInputs();
