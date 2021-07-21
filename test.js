@@ -48,7 +48,7 @@ function checkName()
 function checkYear()
 {
     const gYearValue = gYear.value.trim();
-    let validRegex = /^[0-9 ]+$/;
+    let validRegex = /^2[0-9 ]+$/;
     if (gYearValue.match(validRegex) && gYearValue.length === 4) 
     {
         setSucessFor(gYear, "Perfect");
