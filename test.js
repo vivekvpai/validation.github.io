@@ -7,6 +7,7 @@ const numberCode=document.getElementById("number_code");
 const phonNo=document.getElementById("contact_number");
 const form = document.getElementById("form");
 
+
 form.addEventListener('mouseout', (e)=>
 {
  e.preventDefault();
@@ -16,65 +17,97 @@ form.addEventListener('mouseout', (e)=>
  checkNumber();
 });
 
+function checkAll()
+{
+    if (checkName() && checkYear() && checkUsn() && checkNumber() === true )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 function checkName()
 {
     const userNameValue = userName.value.trim();
-    
-    //const phoneNoValue =phoneNo.value.trim();
-
     let validRegex = /^[A-Za-z ]+$/;
     if (userNameValue.match(validRegex)) 
     {
         setSucessFor(userName, "Perfect");
+        return true;
     }
     else 
     {
-        setErrorFor(userName, 'Alphebts only please');
+        setErrorFor(userName, 'Alphabets only please');
+        return false;
     }
-
 }
 
 function checkYear()
 {
     const gYearValue = gYear.value.trim();
     let validRegex = /^[0-9 ]+$/;
-    if (gYearValue.match(validRegex)) 
+    if (gYearValue.match(validRegex) && gYearValue.length === 4) 
     {
         setSucessFor(gYear, "Perfect");
+        return true;
     }
     else 
     {
-        setErrorFor(gYear, "Grraduation Year must be only Numbers");
+        setErrorFor(gYear, "Numbers only please");
+        return false;
     }
 }
 
 function checkUsn()
 {
+    const usnValue = usn.value.trim();
+    let validRegex = /^[A-Za-z0-9 ]+$/;
     
-    
-    if (usn.value.trim() !== '') 
+    if (usnValue.match(validRegex) && usnValue !== '' && usnValue.length === 10)   
     {
         setSucessFor(usn, "Perfect");
+        return true;
     }
     else 
     {
-        setEmptyFor(usn, "Oprtional");
+        if (usnValue == "")
+        {
+            setEmptyFor(usn, "Oprtional");
+            return true;
+        }
+        else
+        {
+            setErrorFor(usn, "Invalid");
+            return false;
+        }
+        
     }
 }
 
 function checkNumber()
 {
     const phonNoValue = phonNo.value.trim();
-    let validRegex = /^[0-9 ]+$/;
-    let pattern = /^\d{10}$/
-    
-    if (phonNoValue.match(validRegex) && phonNoValue.match(pattern)) 
+    let validRegex = /^[0-9 ]+$/;    
+    if (phonNoValue.match(validRegex) && phonNoValue.length === 10) 
     {
         setSucessFor(phonNo, "Perfect");
+        return true;
     }
     else 
     {
-        setErrorFor(phonNo, "Must be Number Only");
+        if(phonNoValue.length !== 10)
+        {
+            setErrorFor(phonNo, "Enter 10 digits");
+            return false;
+        }
+        else
+        {
+            setErrorFor(phonNo, "Must be Number Only");
+            return false;
+        }
     }
 }
 
