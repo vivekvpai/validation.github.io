@@ -56,7 +56,7 @@ function checkYear()
     }
     else 
     {
-        setErrorFor(gYear, "Numbers only please");
+        setErrorFor(gYear, "Numbers only please Starting with 2XXX");
         return false;
     }
 }
