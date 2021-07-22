@@ -19,7 +19,7 @@ form.addEventListener('mouseout', (e)=>
 
 function checkAll()
 {
-    if (checkName() && checkYear() && checkUsn() && checkNumber() === true )
+    if (checkName() && checkYear() && checkUsn() && checkNumber()  === true )
     {
         return true;
     }
@@ -64,7 +64,7 @@ function checkYear()
 function checkUsn()
 {
     const usnValue = usn.value.trim();
-    let validRegex = /^[A-Za-z0-9 ]+$/;
+    let validRegex = /^[A-Za-z0-9]+$/;
     
     if (usnValue.match(validRegex) && usnValue !== '' && usnValue.length === 10)   
     {
@@ -90,19 +90,20 @@ function checkUsn()
 function checkNumber()
 {
     const phonNoValue = phonNo.value.trim();
-    let validRegex = /^[0-9 ]+$/;    
+    let validRegex = /^[0-9 ]+$/;   
     if (phonNoValue.match(validRegex) && phonNoValue.length === 10) 
     {
         setSucessFor(phonNo, "Perfect");
         return true;
     }
     else 
-    {
+    { 
         if(phonNoValue.length !== 10)
         {
             setErrorFor(phonNo, "Enter 10 digits");
             return false;
         }
+        
         else
         {
             setErrorFor(phonNo, "Must be Number Only");
@@ -110,6 +111,8 @@ function checkNumber()
         }
     }
 }
+
+
 
 function setErrorFor(input, message)
 {
