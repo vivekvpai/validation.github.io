@@ -19,26 +19,24 @@
     <img class="big-circle" src="big-eclipse.svg" alt="">
     <img class="mid-circle" src="mid-eclipse.svg" alt="">
 
-    <div class="container">
+    
         <div class="col-lg-12">
             <div class="row">
-    
-                <!-- 1st half -->
-                <div class="col-lg-3">
 
-                </div>
-    
-                <div class="col-lg-6 mt-5">
+              <div class="col-lg-1"></div>
+
+                <!-- 1st half -->
+                <div class="col-lg-4 mt-5">
                     <div class="card">
                         <div class="card-header bg-info text-center">
                             <h5>Enter the details</h5>
                         </div>
-                        <form class="pd" method="" action="telegram.html" id="form" onsubmit="return checkAll()">
+                        <form class="pd" method="" action="" id="form1" onsubmit="return checkAll()">
             
                             <!-- Name -->
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                  <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required> 
+                                  <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" > 
                                   <i class="fas fa-info-circle"></i>
                                   <small></small>
                             </div>
@@ -50,9 +48,10 @@
                                 <i class="fas fa-info-circle"></i>
                                 <small></small>
                             </div>
+
                             <!-- branch -->
                             <label for="branch"> Branch </label>
-                            <select class="custom-select my-1 mr-sm-2" id="branch" name="branch" required>
+                            <select class="custom-select my-1 mr-sm-2" id="branch" name="branch" >
                                 <option value="">Select One</option>
                                 <option value="CSE">CSE</option>
                                 <option value="ISE">ISE</option>
@@ -61,42 +60,51 @@
                                 <option value="EEE">EEE</option>
                                 <option value="TC">TC</option>
                                 <option value="CIVIL">CIVIL</option>
-                                <option value="MBA">MBA</option>
-                                <option value="M.Tech VLSI & Embedded Systems">M.Tech VLSI & Embedded Systems</option>
-                                <option value="M.Tech Digital Electronics">M.Tech Digital Electronics </option>
-                                <option value="M.Tech Power Systems Engg">M.Tech Power Systems Engg</option>
-                                <option value="M.Tech Design Engg">M.Tech Design Engg</option>
-                                <option value="M.Tech Computer Science & Engg">M.Tech Computer Science & Engg</option>
-            
+                                <option value="MBA">MBA</option>            
                             </select>
             
                             <div class="form-group">
                                 <label for="name">Year of Graduation</label>
-                                <input type="text" class="form-control" id="gyear" placeholder="Graduating year" name="gyear" maxlength="4" required>
+                                <input type="number" class="form-control" id="gyear" placeholder="Graduating year" name="gyear" maxlength="4" min="2005" >
                                 <i class="fas fa-info-circle"></i>
                                 <small></small>
                             </div>
             
             
-                            <!-- contact no -->
+                            
 
                             <div class="form-group">
                               <label for="name">Contact no</label>
                               <div class="group_number">
-                                <input type="text" class="form-control" id="number_code" placeholder=" + Code" name="number_code"  maxlength="5" required>
-                                <input type="text" class="form-control" id="contact_number" placeholder="Contact number" name="contact"  maxlength="10" required>
+                                <input type="text" class="form-control" id="number_code" placeholder="+Code" name="number_code"  maxlength="5" >
+                                <input type="text" class="form-control" id="contact_number" placeholder="Contact number" name="contact"  maxlength="10" >
                                 <i class="fas fa-info-circle"></i>
                                 <small></small>
                                 
                               </div>
-                            </div>
-                            <a href=""><button type="submit" class="btn btn-primary my-3">Join Group</button></a>            
+                            </div> 
+                            <a href=""><button type="submit" class="btn btn-primary my-3" onclick="AddRow()"> Submit </button></a>            
                         </form>
                     </div>
                 </div>
+                
+                <div class="col-lg-6">
+                  <table id="show" class="table mt-5 table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"> Name</th>
+                        <th scope="col"> USN</th>
+                        <th scope="col">Branch</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">number</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
             </div>
         </div>
-    </div>
+
 
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="test.js">
