@@ -31,12 +31,12 @@
                         <div class="card-header bg-info text-center">
                             <h5>Enter the details</h5>
                         </div>
-                        <form class="pd" method="" action="" id="form1" onsubmit="return checkAll()">
+                        <form class="pd" method="GET" action="" id="form1" onclick="return checkAll()">
             
                             <!-- Name -->
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                  <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" > 
+                                  <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required> 
                                   <i class="fas fa-info-circle"></i>
                                   <small></small>
                             </div>
@@ -51,7 +51,7 @@
 
                             <!-- branch -->
                             <label for="branch"> Branch </label>
-                            <select class="custom-select my-1 mr-sm-2" id="branch" name="branch" >
+                            <select class="custom-select my-1 mr-sm-2" id="branch" name="branch" required>
                                 <option value="">Select One</option>
                                 <option value="CSE">CSE</option>
                                 <option value="ISE">ISE</option>
@@ -65,7 +65,7 @@
             
                             <div class="form-group">
                                 <label for="name">Year of Graduation</label>
-                                <input type="number" class="form-control" id="gyear" placeholder="Graduating year" name="gyear" maxlength="4" min="2005" >
+                                <input type="number" class="form-control" id="gyear" placeholder="Graduating year" name="gyear" maxlength="4" min="2005" required>
                                 <i class="fas fa-info-circle"></i>
                                 <small></small>
                             </div>
@@ -76,14 +76,14 @@
                             <div class="form-group">
                               <label for="name">Contact no</label>
                               <div class="group_number">
-                                <input type="text" class="form-control" id="number_code" placeholder="+Code" name="number_code"  maxlength="5" >
-                                <input type="text" class="form-control" id="contact_number" placeholder="Contact number" name="contact"  maxlength="10" >
+                                <input type="text" class="form-control" id="number_code" placeholder="+Code" name="number_code"  maxlength="5" required>
+                                <input type="text" class="form-control" id="contact_number" placeholder="Contact number" name="contact"  maxlength="10" required>
                                 <i class="fas fa-info-circle"></i>
                                 <small></small>
                                 
                               </div>
                             </div> 
-                            <a href=""><button type="submit" class="btn btn-primary my-3" onclick="AddRow()"> Submit </button></a>            
+                            <a href=""><button type="submit" class="btn btn-primary my-3" id="button"> Submit </button></a>            
                         </form>
                     </div>
                 </div>
@@ -92,11 +92,11 @@
                   <table id="show" class="table mt-5 table-bordered">
                     <thead>
                       <tr>
-                        <th scope="col"> Name</th>
-                        <th scope="col"> USN</th>
-                        <th scope="col">Branch</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">number</th>
+                        <th > Name</th>
+                        <th > USN</th>
+                        <th >Branch</th>
+                        <th >Year</th>
+                        <th >number</th>
                       </tr>
                     </thead>
                   </table>

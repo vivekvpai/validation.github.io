@@ -5,9 +5,9 @@ const numberCode=document.getElementById("number_code");
 const phonNo=document.getElementById("contact_number");
 const branch=document.getElementById("branch");
 const form = document.getElementById("form1");
+//const button = document.getElementById("button");
 
-
-form.addEventListener('click', (e)=>
+form.addEventListener('mouseout', (e)=>
 {
  e.preventDefault();
  checkName();
@@ -16,12 +16,19 @@ form.addEventListener('click', (e)=>
  checkNumber();
 });
 
+form.addEventListener('submit', (e)=>
+{
+ e.preventDefault();
+ AddRow();
+});
+
 function checkAll()
 {
     if (checkName() && checkYear() && checkUsn() && checkNumber()  === true )
     //if( checkName() && checkUsn() === true )
     {
         return true;
+       
     }
     else
     {
